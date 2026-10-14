@@ -1,0 +1,6 @@
+export const preventionMethods = [
+  { id: 'net', title: 'దోమతెర', titleEn: 'Mosquito net', description: 'విశ్రాంతి సమయంలో కాటు నుంచి రక్షణకు ఉపయోగించవచ్చు.', descriptionEn: 'Can help protect people from bites while resting.', image: '/images/mosquito-net.png', alt: 'దోమతెర ఉన్న గది', altEn: 'A room with a mosquito net' },
+  { id: 'coil', title: 'దోమ కాయిల్', titleEn: 'Mosquito coil', description: 'ఉపయోగించే ముందు గాలి ప్రసరణ మరియు భద్రతను గమనించండి.', descriptionEn: 'Consider ventilation and safety when using one.', image: '/images/mosquito-coil.jpg', alt: 'ఇంటి రక్షణకు ఉపయోగించే వస్తువు', altEn: 'A home protection item' },
+  { id: 'vaporizer', title: 'లిక్విడ్ వేపరైజర్', titleEn: 'Liquid vaporizer', description: 'లేబుల్ సూచనలను పాటించి పిల్లల నుంచి దూరంగా ఉంచండి.', descriptionEn: 'Follow the label and keep it away from children.', image: '/images/mosquito-vaporizer.jpg', alt: 'ఇంటి లోపలి రక్షణ పద్ధతి', altEn: 'A home interior protection method' },
+  { id: 'cream', title: 'రిపెలెంట్ క్రీమ్', titleEn: 'Repellent cream', description: 'లేబుల్ ప్రకారం మాత్రమే ఉపయోగించండి; కళ్లకు తగలకుండా చూడండి.', descriptionEn: 'Use only as directed and keep it away from the eyes.', image: '/images/repellent-cream.jpg', alt: 'రిపెలెంట్ క్రీమ్', altEn: 'Repellent cream' },
+]
