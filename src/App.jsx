@@ -1114,13 +1114,14 @@ function Dashboard({ language }) {
               <span>{tx(language, "completedCount")}</span>
             </div>
             <div className="metric">
-              <strong>{count((r) => r.action_status === "unresolved")}</strong>
+              <strong>{count((r) => r.action_status === "pending")}</strong>
               <span>{tx(language, "unresolvedCount")}</span>
             </div>
           </div>
           <div className="dashboard-grid">
             <DashboardGroup
               language={language}
+              total={visible.length}
               title={tx(language, "barriers")}
               items={[
                 [
@@ -1147,6 +1148,7 @@ function Dashboard({ language }) {
             />
             <DashboardGroup
               language={language}
+              total={visible.length}
               title={tx(language, "conditions")}
               items={[
                 [
@@ -1164,23 +1166,27 @@ function Dashboard({ language }) {
     </>
   );
 }
-function DashboardGroup({ title, items }) {
+
+function DashboardGroup({ title, items, total }) {
   return (
     <section className="dashboard-group">
       <h2>{title}</h2>
-      {items.map(([label, value]) => (
-        <div className="bar-row" key={label}>
-          <span>{label}</span>
-          <strong>{value}</strong>
-          <i>
-            <b
-              style={{
-                width: `${value ? Math.min(100, Math.max(8, value * 18)) : 0}%`,
-              }}
-            />
-          </i>
-        </div>
-      ))}
+      {items.map(([label, value]) => {
+        const pct = total ? (value / total) * 100 : 0;
+        return (
+          <div className="bar-row" key={label}>
+            <span>{label}</span>
+            <strong>{value}</strong>
+            <i>
+              <b
+                style={{
+                  width: `${value ? Math.min(100, Math.max(4, pct)) : 0}%`,
+                }}
+              />
+            </i>
+          </div>
+        );
+      })}
     </section>
   );
 }
